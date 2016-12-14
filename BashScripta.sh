@@ -73,6 +73,7 @@ if [[ $rc != 0 ]] ; then
     exit $rc
 fi
 
+#til að komast áfram í Jenkins
 docker login --username evabjork --password fakepassword
 
 # Pushar inní docker
