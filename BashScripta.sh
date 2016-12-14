@@ -74,7 +74,7 @@ if [[ $rc != 0 ]] ; then
 fi
 
 #til að komast áfram í Jenkins
-docker login --username evabjork --password fakepassword
+sudo docker login --username evabjork --password fakepassword
 
 # Pushar inní docker
 docker push evabjork/tictactoe:$GIT_COMMIT
