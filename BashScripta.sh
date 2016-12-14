@@ -64,7 +64,7 @@ cp docker-compose.yaml ./build/
 cd build   # Fer inní Build möppuna
 echo Building docker image  #Skrifar út á skjáinn "Building docker image"
 
-sudo docker build -t evabjork/tictactoe:$GIT_COMMIT .   #Docker build 
+docker build -t evabjork/tictactoe:$GIT_COMMIT .   #Docker build 
 
 # Skrifar út á skjáinn ef að build-ið fail-ar
 rc=$?
@@ -74,7 +74,7 @@ if [[ $rc != 0 ]] ; then
 fi
 
 # Pushar inní docker
-sudo docker push evabjork/tictactoe:$GIT_COMMIT
+docker push evabjork/tictactoe:$GIT_COMMIT
 rc=$?
 if [[ $rc != 0 ]] ; then
     echo "Docker push failed " $rc
