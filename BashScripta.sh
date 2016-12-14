@@ -62,7 +62,7 @@ cp docker-run.sh ./build/  #Copy-ar docker-run.sh skjalið inní build möppuna
 cp docker-compose.yaml ./build/
 
 cd build   # Fer inní Build möppuna
-echo Building docker image  #Skrifar út á skjáinn "Building docker image."
+echo Building docker image  #Skrifar út á skjáinn "Building docker image"
 
 docker build -t evabjork/tictactoe:$GIT_COMMIT .   #Docker build 
 
