@@ -73,6 +73,8 @@ if [[ $rc != 0 ]] ; then
     exit $rc
 fi
 
+.././dockerLogin
+
 # Pushar inní docker
 docker push evabjork/tictactoe:$GIT_COMMIT
 rc=$?
