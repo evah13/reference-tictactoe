@@ -1,0 +1,23 @@
+version: '2'
+services:
+  server:
+    environment:
+      - 'NODE_ENV=production'
+      - 'PGHOST=postgres'
+      - 'PGPORT=5432'
+      - 'PORT=3000'
+    image: 'evabjork/tictactoe'
+    ports:
+      - '3000:3000'
+      - '8080:8080'
+    depends_on:
+      - 'postgres' #Server er háður því að postgres verður að vera uppi og keyrandi
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=mysecretpassword
+    ports:
+      - "5432:5432"
+
+      # Segiru okkur að node keyrist á prod mode
+      
