@@ -73,7 +73,7 @@ if [[ $rc != 0 ]] ; then
     exit $rc
 fi
 
-.././dockerLogin
+docker login --username evabjork --password fakepassword
 
 # Pushar inní docker
 docker push evabjork/tictactoe:$GIT_COMMIT
