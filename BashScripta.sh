@@ -30,13 +30,14 @@ if [[ $rc != 0 ]] ; then
 fi
 
 
-mkdir build   # Býr til build möppu
-
 # taggið á committinu er sett inn í tímabundna textaskrá
 cat > ./build/githash.txt <<_EOF_
 $GIT_COMMIT
 _EOF_
 
+cat > ./build/.env << _EOF_
+GIT_COMMIT=$GIT_COMMIT
+_EOF_
 
 mkdir build/public  # Býr til möppu inni í buildmöppunni
 
@@ -58,11 +59,12 @@ _EOF_
 cp ./Dockerfile ./build/   #Copy-ar Dockerfile skjalið inní Build möppuna
 cp package.json ./build/   #Copy-ar package.json skjalið inní build möppuna
 cp docker-run.sh ./build/  #Copy-ar docker-run.sh skjalið inní build möppuna
+cp docker-compose.yaml ./build/
 
 cd build   # Fer inní Build möppuna
 echo Building docker image  #Skrifar út á skjáinn "Building docker image"
 
-docker build -t evabjork/tictactoe .   #Docker build 
+sudo docker build -t evabjork/tictactoe:$GIT_COMMIT .   #Docker build 
 
 # Skrifar út á skjáinn ef að build-ið fail-ar
 rc=$?
@@ -72,7 +74,7 @@ if [[ $rc != 0 ]] ; then
 fi
 
 # Pushar inní docker
-docker push evabjork/tictactoe
+sudo docker push evabjork/tictactoe:$GIT_COMMIT
 rc=$?
 if [[ $rc != 0 ]] ; then
     echo "Docker push failed " $rc
