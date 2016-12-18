@@ -4,4 +4,4 @@ sudo scp -o StrictHostKeyChecking=no -i "/var/lib/jenkins/tictactoe_key.pem" /va
 
 sudo scp -o StrictHostKeyChecking=no -i "/var/lib/jenkins//tictactoe_key.pem" /var/lib/jenkins/workspace/tictactoe/.env ec2-user@82.221.49.193:.env
 
-ssh -i "/var/lib/jenkins//tictactoe_key.pem" ec2-user@82.221.49.193 docker-compose up -d
+sudo ssh -i "/var/lib/jenkins//tictactoe_key.pem" ec2-user@82.221.49.193 docker-compose up -d
