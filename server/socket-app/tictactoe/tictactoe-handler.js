@@ -21,6 +21,7 @@ module.exports = function(injected){
                         }]);
 
                     },
+
                     "JoinGame": function (cmd) {
                         if(gameState.gameFull()){
                             eventHandler( [{
@@ -42,6 +43,7 @@ module.exports = function(injected){
                             side:'O'
                         }]);
                     },
+
                     "PlaceMove": function(cmd){
                         if(gameState.occupiedPos(cmd.pos)){
                             eventHandler( [{
@@ -55,6 +57,18 @@ module.exports = function(injected){
                             return;
                         }
 
+                        var event = [{
+                            gameId: cmd.gameId,
+                            type: "MovePlaced",
+                            user: cmd.user,
+                            name: cmd.name,
+                            timeStamp: cmd.timeStamp,
+                            pos: cmd.pos,
+                            side: cmd.side
+                        }];
+                        gameState.processEvents(event);
+
+
                         eventHandler(event);
                     }
                 };
@@ -62,6 +76,7 @@ module.exports = function(injected){
                 if(!cmdHandlers[cmd.type]){
                     throw new Error("I do not handle command of type " + cmd.type)
                 }
+
                 cmdHandlers[cmd.type](cmd);
             }
         }
