@@ -5,7 +5,7 @@
 
 
 2. Game URL (AWS)
-	http://35.164.247.194/   ... einhverra hluta vegna hef ég ekki náð að skoða leikinn þar, bara locally með docker-compose :( 
+	http://35.165.166.92/  
 
 
 ## Scripts
