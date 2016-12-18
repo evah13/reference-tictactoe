@@ -28,12 +28,12 @@ Outline what script files you created and the purpose of each file. Each file sh
 Outline what tests you created.
 
 - UnitTests, server logic TDD (Git commit log)
-* 'should emit game created event'
-* 'join game command'
-* 'should emit game joined event'
-* 'place a move command'
-* 'should mark grid[0,0] with X, MovePlaced'
-* 'should mark grid[1,1] with X, MovePlaced'
+'should emit game created event'
+'join game command'
+'should emit game joined event'
+'place a move command'
+'should mark grid[0,0] with X, MovePlaced'
+'should mark grid[1,1] with X, MovePlaced'
 
 - Is the game playable?
 	Nei ég held ekki, náði ekki að skoða það því ég komst ekki inná vélina í vafra.
