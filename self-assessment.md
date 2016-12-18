@@ -1,7 +1,7 @@
 1. Jenkins URL and username and password.
 	* http://82.221.49.193:8080/ 
 	* username: evah13
-	* password: fakepassword
+	* password: Handrid117
 
 
 2. Game URL (AWS)
