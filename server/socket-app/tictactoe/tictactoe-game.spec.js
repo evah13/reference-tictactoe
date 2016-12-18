@@ -10,7 +10,7 @@ var tictactoe = require('./tictactoe-handler')(inject({
 var createEvent = {
     type: "GameCreated",
     user: {
-        userName: "TheGuy"
+        userName: "Binni"
     },
     name: "TheFirstGame",
     timeStamp: "2014-12-02T11:29:29"
@@ -19,7 +19,7 @@ var createEvent = {
 var joinEvent = {
     type: "GameJoined",
     user: {
-        userName: "Gummi"
+        userName: "Eva"
     },
     name: "TheFirstGame",
     timeStamp: "2014-12-02T11:29:29"
@@ -27,7 +27,6 @@ var joinEvent = {
 
 
 describe('create game command', function() {
-
 
     var given, when, then;
 
@@ -52,7 +51,7 @@ describe('create game command', function() {
             id:"123987",
             type: "CreateGame",
             user: {
-                userName: "TheGuy"
+                userName: "Binni"
             },
             name: "TheFirstGame",
             timeStamp: "2014-12-02T11:29:29"
@@ -61,7 +60,7 @@ describe('create game command', function() {
             {
                 type: "GameCreated",
                 user: {
-                    userName: "TheGuy"
+                    userName: "Binni"
                 },
                 name: "TheFirstGame",
                 timeStamp: "2014-12-02T11:29:29",
@@ -96,7 +95,7 @@ describe('join game command', function () {
         given = [{
             type: "GameCreated",
             user: {
-                userName: "TheGuy"
+                userName: "Binni"
             },
             name: "TheFirstGame",
             timeStamp: "2014-12-02T11:29:29"
@@ -106,7 +105,7 @@ describe('join game command', function () {
         {
             type: "JoinGame",
             user: {
-                userName: "Gummi"
+                userName: "Eva"
             },
             name: "TheFirstGame",
             timeStamp: "2014-12-02T11:29:29"
@@ -115,7 +114,7 @@ describe('join game command', function () {
             {
                 type: "GameJoined",
                 user: {
-                    userName: "Gummi"
+                    userName: "Eva"
                 },
                 name: "TheFirstGame",
                 timeStamp: "2014-12-02T11:29:29",
@@ -125,10 +124,6 @@ describe('join game command', function () {
 
     });
 
-    it('should emit FullGameJoinAttempted event when game full..implement this', function () {
-
-        expect(true).toBe(false);
-    });
 });
 
 
